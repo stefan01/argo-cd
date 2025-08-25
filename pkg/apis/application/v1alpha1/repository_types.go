@@ -167,6 +167,12 @@ func (repo *Repository) CopyCredentialsFromRepo(source *Repository) {
 		if repo.GCPServiceAccountKey == "" {
 			repo.GCPServiceAccountKey = source.GCPServiceAccountKey
 		}
+		if repo.Proxy == "" {
+			repo.Proxy = source.Proxy
+		}
+		if repo.NoProxy == "" {
+			repo.NoProxy = source.NoProxy
+		}
 		repo.InsecureOCIForceHttp = source.InsecureOCIForceHttp
 		repo.ForceHttpBasicAuth = source.ForceHttpBasicAuth
 		repo.UseAzureWorkloadIdentity = source.UseAzureWorkloadIdentity
